@@ -50,8 +50,8 @@
                 liffId: liffId
             }).then(() => {
                 initializeApp();
-            }).catch((err) => {
-                console.log('LIFF Initialization failed ', err);
+            }).catch((liffId) => {
+                console.log('LIFF Initialization failed ', liffId);
             });
         }
 
