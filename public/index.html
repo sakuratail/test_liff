@@ -42,12 +42,13 @@
         const idToken = liff.getDecodedIDToken();
         const userId = idToken.sub;
         $('form').append(`<input type="hidden" name="userId" value="${userId}">`);
-        $('form').append(`<input type="submit" class="mt-4 btn btn-primary" value="送信">`);
+        $('form').append(`<input type="submit" value="送信">`);
       })
   
       $('form').submit(function( event ) {
         event.preventDefault();
-        $.post( 'https://script.google.com/macros/s/AKfycbwt20yluS45FznNRVxzKjs9MgqS6JUtPvXVV0HJWDKhBX-6O9ISZ9huocWP3JkXrijX/exec', $('form').serialize() );
+        $.post( 'https://script.google.com/macros/s/AKfycbw-8k1aVdQlFFbWOrAXWdS4r3kwzKgJSXJTR_KgcGXPr-N_SRmjr2kOCXzBWmnA1H-c/exec', $('form').serialize() );
+        window.location.href = './send_cmp.html';
       });
     </script>
   </body>
