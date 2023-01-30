@@ -22,7 +22,7 @@ function getMyPlace() {
     var latitude  = position.coords.latitude;//緯度
     var longitude = position.coords.longitude;//経度
     //緯度経度をGAS用に設定
-    output.innerHTML = '<div>緯度 ' + latitude + '°<input type="hidden" id="latitude" name="latitude"></div><div>経度 ' + longitude + '°<input type="hidden" id="longitude" name="longitude"></div>';
+    output.innerHTML = '<div>緯度 ' + latitude + '°<input type="hidden" id="latitude" name="latitude" required></div><div>経度 ' + longitude + '°<input type="hidden" id="longitude" name="longitude" required></div>';
     var element1 = document.getElementById('latitude');
     element1.value = latitude;
     var element2 = document.getElementById('longitude');
