@@ -21,7 +21,12 @@ function getMyPlace() {
   function success(position) {
     var latitude  = position.coords.latitude;//緯度
     var longitude = position.coords.longitude;//経度
-    output.innerHTML = '<p>緯度 ' + latitude + '° <br>経度 ' + longitude + '°</p>';
+    //緯度経度をGAS用に設定
+    output.innerHTML = '<div>緯度 ' + latitude + '°<input type="hidden" id="latitude" name="latitude"></div><div>経度 ' + longitude + '°<input type="hidden" id="longitude" name="longitude"></div>';
+    var element1 = document.getElementById('latitude');
+    element1.value = latitude;
+    var element2 = document.getElementById('longitude');
+    element2.value = longitude;
     // 位置情報
     var latlng = new google.maps.LatLng( latitude , longitude ) ;
     // Google Mapsに書き出し

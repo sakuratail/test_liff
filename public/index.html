@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>Google Maps API サンプル</title>
+    <title>動物目撃情報</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -11,7 +11,21 @@
     <script type="text/javascript" src="script.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNrmHD8OJGsy8fL_3Pz2EBktMNJDDzZn0&callback=initMap" async defer></script>
     
-    <div id="result"></div>
     <p><button onclick="getMyPlace()">現在位置を取得</button></p>
+
+    <form target="send" action="https://script.google.com/macros/s/AKfycbzJPsHpx1E8FhdiH6_yzIj_ZSG7qmhSkFcad1xnBvh1BtNGEvMnnPoE5otiQ_XktPo2/exec" method="POST">
+      <div id="result"></div>
+      <div>
+      <label>動物の種類：</label>
+      <label for="animal">サル <input id="animal" type="radio" name="animals" value="サル" required></label>
+      <label for="r_female">鹿 <input id="animal" type="radio" name="animals" value="鹿"></label>
+      <label for="animal">猪 <input id="animal" type="radio" name="animals" value="猪"></label>
+    </div>
+      <div>
+        <button onclick="location.href='./send_cmp.html'">send</button>
+      </div>
+    </form>
+    
+    <iframe name="send" hidden></iframe>
   </body>
 </html>
