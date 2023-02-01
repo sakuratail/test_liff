@@ -2,6 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>動物目撃情報</title>
     <link rel="stylesheet" href="style.css">
   </head>
@@ -15,6 +16,7 @@
 
     <form target="send" action="https://script.google.com/macros/s/AKfycbzJPsHpx1E8FhdiH6_yzIj_ZSG7qmhSkFcad1xnBvh1BtNGEvMnnPoE5otiQ_XktPo2/exec" method="POST">
       <div id="result"></div>
+      <div id="RealtimeClockArea"><input type="hidden" id="time" name="time" required></div>
       <div>
         <label>動物の種類：</label>
         <label for="animal">サル <input id="animal" type="radio" name="animals" value="サル" required></label>
@@ -30,7 +32,7 @@
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
       liff.init({
-        liffId: '1657840479-5NOxKlwz'
+        liffId: '1657862089-7OjR9Zld'
       }).catch((err) => {
         console.log(err);
       });
@@ -47,7 +49,7 @@
   
       $('form').submit(function( event ) {
         event.preventDefault();
-        $.post( 'https://script.google.com/macros/s/AKfycbw-8k1aVdQlFFbWOrAXWdS4r3kwzKgJSXJTR_KgcGXPr-N_SRmjr2kOCXzBWmnA1H-c/exec', $('form').serialize() );
+        $.post( 'https://script.google.com/macros/s/AKfycbxxEAloKs1SSDvSFEf9yW-ECBykcHY9skUnPJvE-ZpcWYz0erg03ma9ONaP2GQpi5ww/exec', $('form').serialize() );
         window.location.href = './send_cmp.html';
       });
     </script>
